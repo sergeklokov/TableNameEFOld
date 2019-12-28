@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?><edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="pubsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="AnimalCat">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Color" Type="varchar" MaxLength="20" />
+          <Property Name="Age" Type="int" />
+        </EntityType>
+        <EntityType Name="AnimalDog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Color" Type="varchar" MaxLength="20" />
+          <Property Name="Age" Type="int" />
+        </EntityType>
+        <EntityType Name="AnimalHorse">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Color" Type="varchar" MaxLength="20" />
+          <Property Name="Age" Type="int" />
+        </EntityType>
+        <EntityType Name="AnimalRat">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Color" Type="varchar" MaxLength="20" />
+          <Property Name="Age" Type="int" />
+        </EntityType>
+        <EntityContainer Name="pubsModelStoreContainer">
+          <EntitySet Name="AnimalCat" EntityType="Self.AnimalCat" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="AnimalDog" EntityType="Self.AnimalDog" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="AnimalHorse" EntityType="Self.AnimalHorse" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="AnimalRat" EntityType="Self.AnimalRat" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="pubsModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityType Name="AnimalCat">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Color" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Age" Type="Int32" />
+        </EntityType>
+        <EntityType Name="AnimalDog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Color" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Age" Type="Int32" />
+        </EntityType>
+        <EntityType Name="AnimalHorse">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Color" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Age" Type="Int32" />
+        </EntityType>
+        <EntityType Name="AnimalRat">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Color" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Age" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="pubsEntities">
+          <EntitySet Name="AnimalCats" EntityType="Self.AnimalCat" />
+          <EntitySet Name="AnimalDogs" EntityType="Self.AnimalDog" />
+          <EntitySet Name="AnimalHorses" EntityType="Self.AnimalHorse" />
+          <EntitySet Name="AnimalRats" EntityType="Self.AnimalRat" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="pubsModelStoreContainer" CdmEntityContainer="pubsEntities">
+          <EntitySetMapping Name="AnimalCats">
+            <EntityTypeMapping TypeName="pubsModel.AnimalCat">
+              <MappingFragment StoreEntitySet="AnimalCat">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AnimalDogs">
+            <EntityTypeMapping TypeName="pubsModel.AnimalDog">
+              <MappingFragment StoreEntitySet="AnimalDog">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AnimalHorses">
+            <EntityTypeMapping TypeName="pubsModel.AnimalHorse">
+              <MappingFragment StoreEntitySet="AnimalHorse">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AnimalRats">
+            <EntityTypeMapping TypeName="pubsModel.AnimalRat">
+              <MappingFragment StoreEntitySet="AnimalRat">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams />
+  </Designer>
+</edmx:Edmx>
